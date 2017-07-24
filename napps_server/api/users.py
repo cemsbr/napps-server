@@ -2,13 +2,14 @@
 
 # Third-party imports
 from flask import Blueprint, Response, jsonify, redirect, request
+from redis.exceptions import RedisError
+
 # Local source tree imports
 from napps_server.core.decorators import (requires_token, validate_json,
                                           validate_schema)
 from napps_server.core.exceptions import InvalidUser, NappsEntryDoesNotExists
 from napps_server.core.models import User
 from napps_server.core.utils import get_request_data
-from redis.exceptions import RedisError
 
 # System imports
 
